@@ -1,29 +1,35 @@
 $(function(){
 
-   $('.gnb > li').hover(function(){
+   $('.main .gnb > li').hover(function(){
      $(this).children('.sub_menu').stop().slideDown()
    },function(){
-    $('.sub_menu').stop().slideUp()
+    $('.main .sub_menu').stop().slideUp()
    })
+
  $(window).scroll(function(){
    let scrT=$(window).scrollTop();
    if(scrT>0){
-    $('header').addClass('on')
+    $('.logo_area.main').addClass('on')
    }
    else{
-    $('header').removeClass('on')
+    $('.logo_area.main').removeClass('on')
    }
  })
-  $('.prod_img ul li').click(function(e){
-  e.preventDefault();
-  $(this).addClass('on').siblings().removeClass('on')
-  })
 
-  $('.mypage_cont').hover(function(){
-   $(this).children('.mypage_cont ul').stop().slideDown()
-  } ,function(){
-   $('.mypage_cont ul').stop().slideUp()
-  })
+ $(' .mypage_cont').hover(function(){
+  $(this).children('.mypage_cont ul').stop().slideDown()
+ } ,function(){
+  $('.mypage_cont ul').stop().slideUp()
+ })
+ $('.menu_btn_menu .mypage_cont').hover(function(){
+  $(this).children('.mypage_cont ul').stop().slideDown()
+ } ,function(){
+  $('.mypage_cont ul').stop().slideUp()
+ })
+ 
+
+
+ 
  //main visual
 
       const visual = new Swiper(".visual", {
@@ -45,6 +51,11 @@ $(function(){
     });
 
     //Best product
+    $('.prod_img ul li').click(function(e){
+      e.preventDefault();
+      $(this).addClass('on').siblings().removeClass('on')
+      })
+
 
     imgArr = ['https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LFFP01_670x670_0.png',
     'https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LFFN01_670x670_0.png',
@@ -83,13 +94,24 @@ $(function(){
         speed:1000,
         loop:true,
         navigation: {
-          nextEl: ".sc_product .swiper-button-next",
-          prevEl: ".sc_product .swiper-button-prev",
+          nextEl: ".sc_archive .swiper-button-next",
+          prevEl: ".sc_archive .swiper-button-prev",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+         
         },
       });
 
 
-   //  promotion slide
+   //  collection slide
 
       const slide3 = new Swiper(".slide3", {
         slidesPerView: 1.5,
@@ -100,6 +122,7 @@ $(function(){
           el: ".swiper-pagination",
           clickable: true,
         },
+      
       });   
 
       const pm01 =new Swiper(".pm01",{
@@ -116,8 +139,8 @@ $(function(){
           clickable: true,
         },
         navigation: {
-          nextEl: ".sc_promotion .swiper-button-next",
-          prevEl: ".sc_promotion .swiper-button-prev",
+          nextEl: ".sc_collection .swiper-button-next",
+          prevEl: ".sc_collection .swiper-button-prev",
         },
       });
       const pm03 =new Swiper(".pm03",{
@@ -125,6 +148,7 @@ $(function(){
         speed:1000,
         touchRatio: 0
       });
+      
  $('.active .swiper-button-next').click(function(){
    pm01.slideNext()
    pm03.slideNext()
@@ -151,16 +175,16 @@ const tech01 =new Swiper(".tech01",{
     clickable: true,
   },
   navigation: {
-    nextEl: "sc_technology .swiper-button-next",
-    prevEl: "sc_technology .swiper-button-prev",
+    nextEl: ".sc_fragrance .swiper-button-next",
+    prevEl: ".sc_fragrance .swiper-button-prev",
   },
 });
 
-$('.sc_technology .swiper-button-next').click(function(){
+$('.sc_fragrance .swiper-button-next').click(function(){
 tech01.slideNext()
 tech02.slideNext()
 })
-$('.sc_technology .swiper-button-prev').click(function(){
+$('.sc_fragrance .swiper-button-prev').click(function(){
 tech01.slidePrev()
 tech02.slidePrev()
 
@@ -174,4 +198,21 @@ tech02.slidePrev()
         },
     
       });
+
+
+$('.menu_btn').click(function(){
+  $('.menu_btn_menu').toggleClass('on')
+  $('.menu_btn_menu .menu_btn').toggleClass('on')
+  $(body).toggleClass('hidden')
+  $('header').toggleClass('on')
+})
+$('.menu_btn_menu .menu .gnb>li').click(function(){
+  
+  $(this).toggleClass('on')
+  $(this).find('.sub_menu').slideToggle();
+
+})
+
 });
+
+

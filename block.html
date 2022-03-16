@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.12.4.min.js"></script>
+</head>
+<style>
+    .shopping.on{
+        display: block;
+        height: 500px;
+        width: 200px;
+        background-color: red;
+    }
+    
+    .shopping>div{width: 100px; height: 100px;}
+    .inner_menu01.on{background-color: #fff; display: block;}
+    .inner_menu02.on{background-color: blue;display: block;}
+</style>
+<body>
+    <div class="shopping.on">
+        ddd
+    <div class="inner_menu01"></div>
+    <div class="inner_menu02"></div>
+    </div>
+
+ <script>
+       $(function(){
+      let shopping = $(".shopping").css("display")
+
+                if ($(".shopping").hasclass('on')){
+                        alert("꺼진다")
+                  $('.inner_menu01').addClass('on');
+                  $('.inner_menu02').removeClass('on');
+            
+
+                    }else{
+                    $('.inner_menu01').removeClass('on');
+                     $('.inner_menu02').addClass('on')}
+                   
+                    
+  
+                    });
+ </script>
+      
+  
+</body>
+</html>
