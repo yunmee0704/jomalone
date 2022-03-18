@@ -404,6 +404,7 @@ border: 1px solid  #333}
     margin: 0 30px;
     width: 100%;
     margin: 0 auto;
+    
     position: absolute;
     bottom: 10px;
     left: 0;
@@ -775,29 +776,30 @@ background-size: cover;
 .sc_notice {
     padding: 0;
     border-top: 1px solid #eaeaea;
-  width: 100%;
     height: 84px;
 }
 
 .sc_notice .notice {
- 
+  
+    width: 100%;
     height: 100%;
     overflow: hidden;
+
 }
 
 .sc_notice .notice .swiper-wrapper {
     width: 100%;
-
     height: 100%;
+
+  
 }
 
 .sc_notice .notice .swiper-wrapper .swiper-slide {
-    
-    height: 100%;
     font-size: 18px;
-    line-height: 5;
-    text-align: center;
-    overflow: hidden;
+    width: 100%;
+    height: 100%; 
+  text-align: center;
+  position: relative;
 
 }
 
@@ -811,7 +813,7 @@ background-size: cover;
     position: absolute;
     top: 50%;
     margin-left: 17px;
-    margin-top: -5px;
+    margin-top: -9px;
 }
 
 .sc_notice .notice .cont_wrap strong::after {
@@ -821,23 +823,34 @@ background-size: cover;
     background: #e0e0e0;
     position: absolute;
     top: 50%;
-   
-    margin-left: 17px;
+margin-left: 17px;
+    margin-top: -5px;
    
 
 }
 
 .sc_notice .cont_wrap {
-    display: inline-block;
-    height: 100%;
-   
+display: inline-block;
+
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+
 }
+.sc_notice .cont_wrap a {
+margin: 0 auto;
+ display: block;
+ height: 100%;
+ overflow: hidden;}
+
+
 
 .sc_notice strong {
     float: left;
     display: inline-block;
     /* position: relative; */
-    height: 100%;
+   
     margin-right: 35px;
 }
 
@@ -880,8 +893,10 @@ background-size: cover;
     .sc_rose{flex-direction: column; }
     .sc_rose .left{width: 100%;}
     .sc_rose .slide_area{width: 100%;}
-    .sc_fragrance .slide_wrap .swiper .img_wrap{height: 550px;}
-   
+  
+    .sc_fragrance .slide_wrap{width: 82%;}
+
+    .sc_fragrance .cont_wrap {padding: 10px 20px 20px;}
     .sc_fragrance .slide .cont_wrap p{font-size: 15px;}
     .sc_fragrance .slide .cont_wrap h3 {font-size: 30px;}
     .area1 .slide2{margin-left: 60px;}
@@ -913,6 +928,8 @@ background-size: cover;
         0%{height:  0;}
         100%{height: 943px;}
     }
+    .sc_fragrance .slide_wrap{width: 82%;}
+    
     .sc_fragrance .slide_wrap .swiper .img_wrap{height: 600px;}
     .sc_fragrance .slide .cont_wrap p{font-size: 13px; font-weight: 300;}
     .sc_fragrance .slide .cont_wrap h3 {font-size: 30px;}
@@ -943,6 +960,7 @@ background-size: cover;
     .sc_visual .swiper-slide .text_wrap h2{ font-size: 50px;}
     .sc_visual .slide_btn{display: none;}
     .sc_visual .swiper-pagination{left: 50px;}
+    .sc_visual::before {top: 90px;  }
     .prod_img ul{margin-top: 20px;}
     .sc_rose .slide_area{margin-top: 20px;}
     .sc_rose .slide_area .img_wrap{margin-top: 20px; height: 600px;}
@@ -977,7 +995,7 @@ background-size: cover;
     .sc_archive .swiper-button-next {right: 40px;}
     .sc_collection { padding: 100px 0 0px 0; overflow: hidden;}
     .sc_collection .slide_wrap .img_wrap{height: 230px;}
-    .sc_collection .slide_wrap .img_wrap img{height: 230px;}
+    .sc_collection .slide_wrap .img_wrap img{height: 250px;}
     .sc_collection .slide_wrap .text_wrap{padding: 30px 10px 15px;}
     .sc_collection .slide_wrap .desc{font-size: 15px;margin-top: 10px;}
     .sc_collection .view_more a{font-size: 14px;}
@@ -990,8 +1008,8 @@ background-size: cover;
     .sc_sns .sns_box ul{display: none;}
     .sc_sns .sns_box ul li{margin-right: 20px;}
     .box_wrap .box{padding: 5px; box-sizing: border-box;}
-    .sc_notice .notice .swiper-wrapper .swiper-slide{font-size: 15px; line-height: 3.5;}
-    .sc_notice .notice .cont_wrap strong::after {margin-top: -3px;}
+    .sc_notice .notice .swiper-wrapper .swiper-slide{font-size: 15px; }
+    .sc_notice .notice .cont_wrap strong::after {}
 }
 
 /* 모바일 0~768px 320px이 가장 작은 디바이스! */
@@ -1001,7 +1019,7 @@ background-size: cover;
     .sc_visual .swiper-slide .text_wrap{top: 50%; left: 50%; transform: translate(-50%, -50%);}
     .sc_visual .swiper-slide .text_wrap h2{ font-size: 40px;}
     .sc_visual .swiper-pagination{left: 20px;}
-    .sc_visual::before{height: 100%;}
+    .sc_visual::before{height: calc(100% - 90px);}
     .sc_rose .left p{font-size: 13px; text-align: center; }
     .prod_img ul li {width: 55px;height: 55px; z-index: 1;}
     .sc_rose .swiper-slide{padding: 10px;}
@@ -1047,7 +1065,7 @@ background-size: cover;
    .sc_collection .slide_wrap .title p:first-child::after{display: none;}
    
    .sc_collection .slide_wrap .view_more{position: absolute; left: 50%; transform: translateX(-50%);;bottom: 0; }
-   .sc_sns{padding-top: 100px; margin: 0 20px;}
+   .sc_sns{margin: 0 20px; padding: 0; padding-top: 100px;}
    .sc_sns .title_wrap{transform: translateX(-50%); left: 50%; top: 150px;}   
     .sc_sns .title_wrap h2{width: 200px;}
    .box_wrap{flex-direction: column; padding: 150px 0;}
@@ -1056,16 +1074,20 @@ background-size: cover;
    .sc_sns .sns_box{margin-bottom: 0;}
    .sc_sns .sns_box span{margin-bottom: 0;}
    .box_wrap .left_box .box img{height: 100%; width: 100%;}
-   .box_wrap .right_box{width: 100%; flex-wrap: nowrap;}
+   .box_wrap .right_box{width: 100%;}
 
-   .box_wrap .right_box .box1 img{height: 86%;}
+   .box_wrap .right_box .box1 img{}
    .box_wrap .right_box .box3 img{
-    width: 100%; height: 86%;}
+    width: 100%;}
 
-    .sc_notice {height: 50px; padding:0; box-sizing: border-box;}
-    .sc_notice .swiper a{height: 50px;}
+    .sc_notice {padding:0; box-sizing: border-box;}
+
+ 
     .sc_notice .notice .cont_wrap strong::after {margin-left: 15px;}
     .sc_notice .content {margin-right: 0;width: 100px;}
 }
     
 
+@media screen and (max-width: 320px){
+    .sc_notice .cont_wrap {width: 80%;}
+}
