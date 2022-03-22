@@ -860,6 +860,7 @@ margin: 0 auto;
 }
 
 .sc_notice .content {
+
     margin-right: 35px;
     position: relative;
     display: inline-block;
@@ -870,10 +871,14 @@ margin: 0 auto;
 }
 
 .sc_notice .date{
+  
     padding-top: 3px;
     font-size: 16px;
     color:#868686;
     width: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   
 }
 
@@ -1029,6 +1034,7 @@ margin: 0 auto;
     .sc_rose .slide_area .img_wrap {height: 100%;}
    .sc_rose .slide_area .swiper-slide{display: flex; flex-direction: column; width: 100%;}
    .sc_rose .slide_area .img_wrap{ width: 100%} 
+   .sc_rose .slide_area .img_wrap a{position: initial;top: 0; transform: translateY(0);} 
    .sc_rose .slide_area .cont_wrap{width: 100%; padding: 0;}
    .sc_rose .slide_btn{display: none; padding: 0 30px;}
    .sc_rose .slide_area p{padding: 0;}
@@ -1082,9 +1088,12 @@ margin: 0 auto;
    .box_wrap .right_box .box3 img{
     width: 100%;}
 
-    .sc_notice {padding:0; box-sizing: border-box;} 
-    .sc_notice .notice .swiper-wrapper .swiper-slide{width: 100%;}
-    .sc_notice .notice .cont_wrap strong::after {margin-left: 15px;}
-    .sc_notice .content {margin-right: 0;width: 100px;}
+    .sc_notice {padding:0; box-sizing: border-box; width: 100%; } 
+    .sc_notice .notice .swiper-wrapper .swiper-slide{width: 100%; }
+    .sc_notice .notice .cont_wrap a{width: 100%; font-size: 12px;}
+    .sc_notice .notice .cont_wrap strong{width: 20px; margin-right: 30px;}
+    .sc_notice .notice .cont_wrap strong::after {margin-left: 35px; margin-top: -4px;}
+    .sc_notice .content {margin-right: 0; width: 80px;}
+    .sc_notice .date {margin-right: 0; width: 30px; padding-top: 0;}
 }
     
